@@ -471,6 +471,8 @@ footer {
     height: 294px;
     background-color: rgba(33, 150, 243, 0.9);
     padding: 63px 24px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .overlay-text {
    font-size: 18px;
@@ -642,4 +644,6 @@ footer {
     position: absolute;
     top: 15px;
     right: 15px;
+    border-radius: 50%;
   }
+  
