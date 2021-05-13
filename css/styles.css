@@ -30,7 +30,6 @@ p {
   margin-bottom: 0;
 }
 a {
-    /*outline: none;*/
     text-decoration: none;
     color:var(--black-color);
   }
@@ -43,6 +42,9 @@ img {
 nav a.active {
     color:var(--object-color);
 }
+
+
+
 .list {
     margin: 0;
     padding-left: 0;
@@ -92,11 +94,11 @@ nav a.active {
     position: relative;
     align-items: center;
     padding: 32px 0px;
-
-    transition: color;
-    transition: 250ms;
+    transition-property: color;
+    transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }     
+
 .menu {
     display: inline-flex;
 }
@@ -121,6 +123,7 @@ nav a.active {
     margin-right: 10px;
     fill: currentColor; 
 }
+
 .nav-line::after { 
   content: "";
   display: block;
@@ -130,11 +133,6 @@ nav a.active {
   height: 4px;
   border-radius: 2px;  
   background-color: var(--object-color);
-  opacity: 0;
-}
-.nav-line:hover::after,
-.nav-line:focus::after {
-   opacity: 1;
 }
 
 header {
@@ -161,11 +159,9 @@ header {
     color: var(--object-color);
 }
 .link {
-    transition: color;
-    transition: background-color ;
-    transition: box-shadow; 
-    transition: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    /*transition-duration: 250ms;
+    transition-property: color, background-color, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 .link:hover,
@@ -294,8 +290,10 @@ header {
     position: absolute;
     bottom: 0%;
     width: 100%;
-    padding-top: 27px;
-    padding-bottom: 27px;
+    height: 70px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
     background-color: rgba(47, 48, 58, 0.8);
     color: var(--brand-color);
     font-weight: bold;
@@ -340,6 +338,11 @@ header {
     text-align: center;
     color:var(--grey-color);
    }
+
+ .team-item-info {
+     padding-top: 30px ;
+     padding-bottom: 16px ;
+ }  
 .team-name {
     font-size: 16px;
     line-height: 1.19;
@@ -347,7 +350,6 @@ header {
     text-align: center;
     letter-spacing: 0.03em;
     color:var(--black-color);
-    padding-top: 30px ;
     padding-bottom: 10px ;
 }
 .grey-text {
@@ -392,14 +394,10 @@ footer {
     border-radius: 4px;
     padding: 6px 22px;
     outline-style: none ;
-
-    transition: color;
-    transition: background-color ;
-    transition: box-shadow; 
-    transition: 250ms;
-    /*transition-duration: 250ms; почему-то работает только для рядом стоящего свойства*/
+    transition-duration: 250ms;
+    transition-property: color, background-color, box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-   } 
+} 
 
 .button-all { /* кнопка синяя всегда*/
     color: var(--white-color); 
@@ -416,23 +414,6 @@ footer {
 
 .card-img {
     margin-bottom: -1px;
-}
-.card-title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    }
-.card-body-item {
-    font-weight: 400 ;
-    font-size: 16px ;
-    line-height: 1.88 ;
-    letter-spacing: 0.03em;
-    color:var(--grey-color);
-    }
-.card {
-        padding: 20px 24px;
-        border: 1px solid #EEEEEE;
 }
 
 
@@ -451,28 +432,18 @@ footer {
     padding-top: 0 px;
     background: var(--brand-color);    
     width: 368px;
+    overflow: hidden ;
  }
 .card-portf {
      display: block;
+     
 }
 
 .card-portf:hover,
 .card-portf:focus { 
     box-shadow:   0px 2px 2px 0px rgba(0, 0, 0, 0.12),
-                0px 1px 2px 0px rgba(0, 0, 0, 0.08),
-                0px 3px 1px 0px rgba(0, 0, 0, 0.1);
-}
-.overlay {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 294px;
-    background-color: rgba(33, 150, 243, 0.9);
-    padding: 63px 24px;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                  0px 1px 2px 0px rgba(0, 0, 0, 0.08),
+                  0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 .overlay-text {
    font-size: 18px;
@@ -481,9 +452,44 @@ footer {
     color: var(--white-color);
 }
 
+.overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 294px;
+    padding: 63px 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      
+}
+
 .card-portf:hover .overlay,
 .card-portf:focus .overlay {
     opacity: 1;
+    transform: translateY(0%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    }
+.card-body-item {
+    font-weight: 400 ;
+    font-size: 16px ;
+    line-height: 1.88 ;
+    letter-spacing: 0.03em;
+    color:var(--grey-color);
+    }
+.card {
+    padding: 20px 24px;
+    border: 1px solid #EEEEEE;
 }
 
 
@@ -494,7 +500,6 @@ footer {
     margin-block-end: 0px;
 }
 .social-icons-team {
-    padding-top: 16px;
     padding-bottom: 30px;
 }
 .social-icons-svg {
@@ -519,10 +524,8 @@ footer {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    transition: color;
-    transition: background-color ;
-    transition: box-shadow; 
-    transition: 250ms;
+    transition-duration: 250ms;
+    transition-property: color, background-color, box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -592,6 +595,7 @@ footer {
     fill: var(--brand-color);
 }
 .ftr-social-title {
+    font-weight: bold;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
@@ -610,6 +614,8 @@ footer {
     height: 100%;
     background-color: rgba(23, 26, 36, 0.6);
     overflow: auto;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .is-hidden {
@@ -634,16 +640,12 @@ footer {
     border-radius: 4px;
   }
 
-  /*.modal-title {
-    font-weight: 700;
-    font-size: 25px;
-    color: ;
-  }*/
-  
+    
   .modal-btn-close {
     position: absolute;
     top: 15px;
     right: 15px;
     border-radius: 50%;
   }
+
   
