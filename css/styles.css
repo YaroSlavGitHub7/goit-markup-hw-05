@@ -205,6 +205,7 @@ header {
    }
 
 .main-button {
+    cursor: pointer;
     color: var(--white-color) ;
     font-weight: 700;
     line-height: 1.88;
@@ -412,10 +413,9 @@ footer {
  }
 
 
-.card-img {
+.card-portf {
     margin-bottom: -1px;
 }
-
 
 .cards {
     display: flex;
@@ -425,26 +425,61 @@ footer {
     margin-top: -30px;
 }
 .list-card {
-    position: relative;
     display: flex;
     margin-left: 30px;
     margin-top: 30px;
     padding-top: 0 px;
     background: var(--brand-color);    
     width: 368px;
-    overflow: hidden ;
- }
-.card-portf {
-     display: block;
-     
 }
 
-.card-portf:hover,
-.card-portf:focus { 
+ .link-card {
+    position: relative;
+ }
+ 
+.card-portf {
+     display: block;
+     position: relative;
+     overflow: hidden ;
+}
+
+.link-card:hover,
+.link-card:focus { 
     box-shadow:   0px 2px 2px 0px rgba(0, 0, 0, 0.12),
                   0px 1px 2px 0px rgba(0, 0, 0, 0.08),
                   0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.overlay-text {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-card:hover .overlay-text,
+.link-card:focus .overlay-text {
+    opacity: 1;
+    transform: translateY(0%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+.card-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+ }
+
 .overlay-text {
    font-size: 18px;
     line-height: 1.56;
@@ -452,45 +487,19 @@ footer {
     color: var(--white-color);
 }
 
-.overlay {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 294px;
-    padding: 63px 24px;
-    background-color: rgba(33, 150, 243, 0.9);
-    transform: translateY(100%);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      
-}
-
-.card-portf:hover .overlay,
-.card-portf:focus .overlay {
-    opacity: 1;
-    transform: translateY(0%);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.card-title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    }
-.card-body-item {
+.card-txt-portf {
     font-weight: 400 ;
     font-size: 16px ;
     line-height: 1.88 ;
     letter-spacing: 0.03em;
     color:var(--grey-color);
-    }
-.card {
+}
+
+.card-txt {
     padding: 20px 24px;
     border: 1px solid #EEEEEE;
 }
+
 
 
 .social-icons {
@@ -642,10 +651,15 @@ footer {
 
     
   .modal-btn-close {
+    cursor: pointer;
     position: absolute;
     top: 15px;
     right: 15px;
     border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+    width: 30px;
+    height: 30px;
   }
 
   
