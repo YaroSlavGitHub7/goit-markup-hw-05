@@ -43,8 +43,6 @@ nav a.active {
     color:var(--object-color);
 }
 
-
-
 .list {
     margin: 0;
     padding-left: 0;
@@ -159,9 +157,9 @@ header {
     color: var(--object-color);
 }
 .link {
-    /*transition-duration: 250ms;
+    transition-duration: 250ms;
     transition-property: color, background-color, box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -394,7 +392,7 @@ footer {
     border: 0px;
     border-radius: 4px;
     padding: 6px 22px;
-    outline-style: none ;
+    /*outline-style: none ;*/
     transition-duration: 250ms;
     transition-property: color, background-color, box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
