@@ -158,7 +158,7 @@ header {
 }
 .link {
     transition-duration: 250ms;
-    transition-property: color, background-color, box-shadow;
+    transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -392,7 +392,6 @@ footer {
     border: 0px;
     border-radius: 4px;
     padding: 6px 22px;
-    /*outline-style: none ;*/
     transition-duration: 250ms;
     transition-property: color, background-color, box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -409,7 +408,6 @@ footer {
     flex-wrap: wrap;
     margin-bottom: 50px;
  }
-
 
 .card-portf {
     margin-bottom: -1px;
@@ -443,9 +441,9 @@ footer {
 
 .link-card:hover,
 .link-card:focus { 
-    box-shadow:   0px 2px 2px 0px rgba(0, 0, 0, 0.12),
-                  0px 1px 2px 0px rgba(0, 0, 0, 0.08),
-                  0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+    box-shadow:  0px 1px 1px rgba(0, 0, 0, 0.12), 
+                  0px 4px 4px rgba(0, 0, 0, 0.06),
+                   1px 4px 6px rgba(0, 0, 0, 0.16);
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -532,7 +530,7 @@ footer {
     height: 44px;
     border-radius: 50%;
     transition-duration: 250ms;
-    transition-property: color, background-color, box-shadow;
+    transition-property: color, background-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -569,6 +567,9 @@ footer {
     width: 100%;
     height: 100%;
     fill: rgba(175, 177, 184, 1);
+    transition-duration: 250ms;
+    transition-property:  fill, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-set-client {
@@ -580,9 +581,6 @@ footer {
 .client-link:focus  {
     fill:  var(--object-color);
     border-color:var(--object-color) ;
-    box-shadow:   0px 2px 2px 0px rgba(0, 0, 0, 0.12),
-                0px 1px 2px 0px rgba(0, 0, 0, 0.08),
-                0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .ftr-dark-bg {
